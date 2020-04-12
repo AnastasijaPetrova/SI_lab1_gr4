@@ -47,10 +47,10 @@ class Point {
 		if(xDirection=='L')
            	 x++;
         	else if(xDirection=='R')
-           	 x--;
-       	 	else if(yDirection=='D')
-           	 y--;
-        	else if(yDirection=='U')
+           	 x++;
+       	 	else if(yDirection=='U')
+           	 y++;
+        	else if(yDirection=='D')
            	 y++;
 	}
 
@@ -59,6 +59,27 @@ class Point {
 		System.out.println("("+x+", "+y+")");
 	}
 
+	class Canvas{
+		List<Point> tocka=new List<Point>();
+		
+		public void addPoint(Point tocka){
+			tocka.add(tocka);
+		}
+		public void middle(){
+			int middle=tocka.size();
+			double x=0;
+			double y=0;
+			for (Point tmp: tocka){
+				x+=tmp.getX();
+				y+=tmp.getY();
+			}
+			double final_x=x/middle;
+			double final_y=y/middle;
 
+		}
+		public void removePoint(Point tocka){
+			tocka.remove(tocka);
+		}
 
+	}
 }
